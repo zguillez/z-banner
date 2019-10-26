@@ -1,0 +1,35 @@
+<html>
+<head>
+  <meta name="ad.size" content="width=%WIDTH%,height=%HEIGHT%">
+  <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+  <script>
+    /* eslint-disable */
+    if (!Enabler.isInitialized()) {
+      Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitialized);
+    } else {
+      enablerInitialized();
+    }
+
+    function enablerInitialized() {
+      if (!Enabler.isVisible()) {
+        Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, adVisible);
+      } else {
+        adVisible();
+      }
+    }
+
+    function clickTag() {
+      Enabler.exit('Click');
+      //Enabler.exitOverride("Click", "%CLICKTAG%");
+    }
+
+    function adVisible() {
+      // Ad visible, start ad/animation.
+      document.querySelector('img').addEventListener('click', clickTag);
+    }
+  </script>
+</head>
+<body style="margin:0">
+<img src="%PATH%" width="%WIDTH%" height="%HEIGHT%" border="0">
+</body>
+</html>

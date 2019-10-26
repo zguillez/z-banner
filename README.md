@@ -1,24 +1,33 @@
-# z-dummy
-Dummy Module
+# z-banner
+NodeJS module for html5 banner wrapper
 
 ## Install
 ```
-npm i z-dummy
+npm i z-banner
 ```
 # Usage
 ```
-const dummy = require('z-dummy');
+const zbanner = require('z-banner');
 ```
 
-## Dummy function
+## Wrap banner
 
 ```
-dummy.dummy(null).then((data) => {
-	console.log(data);
-}).catch((err) => {
-	console.log(`${err}`.red);
-});
+const data = {
+  'template': 'image', // image|video|enabler
+  'size': [300, 250],
+  'filename': 'dummy.jpg',
+  'clicktag': 'http://google.es',
+  'output': ['.temp', 'index.html'],
+};
 ```
+
+### Templates
+
+```'template': 'image',``` Image banner with clickTag
+```'template': 'video',``` Video banner with clickTag
+```'template': 'enabler',``` Banner with Enabler.js
+
 
 # Contributing and issues
 Contributors are welcome, please fork and send pull requests! If you have any ideas on how to make this project better then please submit an issue or send me an [email](mailto:mail@zguillez.io).
@@ -30,5 +39,5 @@ Original code licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License) Op
 
 # Changelog
 
-### v0.1.0 (January 1, 2020)
-* Basic dummy implementation
+### v0.1.0 (October 27, 2019)
+* Basic zbanner implementation

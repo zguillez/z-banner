@@ -1,7 +1,0 @@
-#!/usr/local/bin/node
-'use strict';
-const file = require('../src/Zfile.js');
-file.checkIfFolderExists('.temp', true);
-const f = file.create('.temp/test.txt');
-f.load('bin/test.js').then(() => f.save());
-

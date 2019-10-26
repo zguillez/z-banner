@@ -2,4 +2,4 @@
 /**
  * @type {Zbanner}
  */
-module.exports = require('./src/Zdummy.js');
+module.exports = require('./src/Zzbanner.js');
